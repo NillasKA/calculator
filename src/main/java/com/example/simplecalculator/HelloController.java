@@ -7,36 +7,6 @@ import javafx.scene.control.Label;
 
 public class HelloController {
     @FXML
-    private Button btnCalculate;
-    @FXML
-    private Button btnPlus;
-    @FXML
-    private Button btnMinus;
-    @FXML
-    private Button btnMultiply;
-    @FXML
-    private Button btnDivision;
-    @FXML
-    private Button btnZero;
-    @FXML
-    private Button btnOne;
-    @FXML
-    private Button btnTwo;
-    @FXML
-    private Button btnThree;
-    @FXML
-    private Button btnFour;
-    @FXML
-    private Button btnFive;
-    @FXML
-    private Button btnSix;
-    @FXML
-    private Button btnSeven;
-    @FXML
-    private Button btnEight;
-    @FXML
-    private Button btnNine;
-    @FXML
     private Label lblNumber1;
     @FXML
     private Label lblNumber2;
@@ -44,7 +14,7 @@ public class HelloController {
     private Label lblOperator;
     private int number1;
     private int number2;
-    private int result;
+    private double result;
     private boolean operatorClicked;
     private String strOperatorClicked;
 
@@ -63,32 +33,52 @@ public class HelloController {
         switch(strOperatorClicked){
             case "+":
                 result = number1 + number2;
-                lblNumber1.setText(Integer.toString(result));
+                lblNumber1.setText(Double.toString(result));
                 lblNumber2.setText("");
                 lblOperator.setText("");
                 break;
             case "-":
                 result = number1 - number2;
-                lblNumber1.setText(Integer.toString(result));
+                lblNumber1.setText(Double.toString(result));
                 lblNumber2.setText("");
                 lblOperator.setText("");
                 break;
             case "/":
-                result = number1 / number2;
-                lblNumber1.setText(Integer.toString(result));
+                result = (double) number1 / number2;
+                lblNumber1.setText(Double.toString(result));
                 lblNumber2.setText("");
                 lblOperator.setText("");
                 break;
             case "X":
                 result = number1 * number2;
-                lblNumber1.setText(Integer.toString(result));
+                lblNumber1.setText(Double.toString(result));
                 lblNumber2.setText("");
                 lblOperator.setText("");
                 break;
-
+            case "^":
+                result = Math.pow(number1,number2);
+                lblNumber1.setText(Double.toString(result));
+                lblNumber2.setText("");
+                lblOperator.setText("");
+                break;
         }
     }
 
+    public void onSqrClick(ActionEvent actionEvent) {
+        number1 = Integer.parseInt(lblNumber1.getText());
+        result = Math.sqrt(number1);
+        lblNumber1.setText(Double.toString(result));
+        lblNumber2.setText("");
+        lblOperator.setText("");
+    }
+
+    public void onPowerClick(ActionEvent actionEvent) {
+        if(!operatorClicked) {
+            lblOperator.setText("^");
+            operatorClicked = true;
+            strOperatorClicked = "^";
+        }
+    }
 
     public void onDivisionClick(ActionEvent actionEvent) {
         if(!operatorClicked) {

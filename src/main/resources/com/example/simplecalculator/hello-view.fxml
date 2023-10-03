@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="448.0" prefWidth="413.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="com.example.simplecalculator.HelloController">
+<VBox alignment="CENTER" prefHeight="448.0" prefWidth="413.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simplecalculator.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -125,6 +125,16 @@
             </font>
          </Button>
          <Button fx:id="btnClear" onAction="#onClearClick" prefHeight="40.0" prefWidth="90.0" text="CE" GridPane.rowIndex="1">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+         <Button fx:id="btnSqr" onAction="#onSqrClick" prefHeight="40.0" prefWidth="90.0" text="√sqrt" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+         <Button fx:id="btnPower" onAction="#onPowerClick" prefHeight="40.0" prefWidth="90.0" text="xˣ" GridPane.columnIndex="2" GridPane.rowIndex="1">
             <font>
                <Font size="18.0" />
             </font>

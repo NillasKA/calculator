@@ -192,4 +192,15 @@ public class HelloController {
             lblNumber2.setText(lblNumber2.getText() + "9");
         }
     }
+
+    public void onConvertClick(ActionEvent actionEvent) {
+        if(result < 0){
+            result = Math.abs(result);
+            lblNumber2.setText(Double.toString(result));
+        }
+        else{
+            result *= -1;
+            lblNumber2.setText(Double.toString(result));
+        }
+    }
 }
